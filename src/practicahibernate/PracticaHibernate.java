@@ -17,14 +17,9 @@ public class PracticaHibernate {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      ManejaExperto me = new ManejaExperto();     
+        
+         
      
-      
-    Experto ex = me.obtenExperto("E001");     
-    System.out.println(ex.getEspecialidad());
-    System.out.println(ex.getNombre());
-     
-     //me.obtenCasos();
     }
     
 }

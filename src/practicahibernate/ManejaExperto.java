@@ -89,5 +89,18 @@ public class ManejaExperto {
     }
 
     
+     public void obtenNombreYEspecialidad()
+    {
+        this.iniciaOperacion();
+        
+        Query query = sesion.createQuery("SELECT e.nombre, e.especialidad FROM Experto as e");
+        List<Experto> listExpertos = query.list();
+        
+        for(Experto e: listExpertos)
+            System.out.println("Nombre: " + e.getNombre() + " Especialidad: " + e.getEspecialidad());
+        
+        this.finalizaOperacion();
+    }
+    
   
 }
