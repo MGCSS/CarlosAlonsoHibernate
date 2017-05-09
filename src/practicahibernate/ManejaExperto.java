@@ -78,8 +78,7 @@ public class ManejaExperto {
     }
 
     public Experto obtenExperto(String idExperto) {
-        this.iniciaOperacion();
-        
+        this.iniciaOperacion();        
         Query query = sesion.createQuery("SELECT e FROM Experto e WHERE codExperto=:idExperto");
         query.setParameter("idExperto", idExperto);
         List<Experto> expertos = query.list();
@@ -130,4 +129,5 @@ public class ManejaExperto {
         
         this.finalizaOperacion();
     }
+
 }
