@@ -102,5 +102,18 @@ public class ManejaExperto {
         this.finalizaOperacion();
     }
     
+    public void listaConParametro(String keyword)
+    {
+        this.iniciaOperacion();
+        
+        Query query = sesion.createQuery("FROM Experto e WHERE e.especialidad=:esp");
+        query.setParameter("esp", keyword);
+        List<Experto> expertos = query.list();
+        
+        for(Experto e: expertos)
+            System.out.println("Nombre: " + e.getNombre());
+        
+        this.finalizaOperacion();
+    }
   
 }
