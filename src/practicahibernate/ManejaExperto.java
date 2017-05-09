@@ -116,4 +116,18 @@ public class ManejaExperto {
         this.finalizaOperacion();
     }
   
+     public void obtenCasos()
+    {
+        this.iniciaOperacion();
+        
+        String queryText = "SELECT DISTINCT e.nombre, cp.nombre FROM Experto as e, CasoPolicial as cp "
+                        + "INNER JOIN e.colaboras inner join cp.colaboras";
+        Query query = sesion.createQuery(queryText);
+        List<Object[]> result = query.list();
+        
+        for(int i = 0; i < result.size(); i++)
+            System.out.println(result.get(i)[0] + " " + result.get(i)[1]);
+        
+        this.finalizaOperacion();
+    }
 }
